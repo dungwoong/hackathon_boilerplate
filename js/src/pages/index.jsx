@@ -1,3 +1,4 @@
+import App from "@/components/app/app";
 import Login from "@/components/login/loginForm";
 import { checkTokenWithServer } from "@/components/login/loginUtils";
 import { useEffect, useState } from "react";
@@ -47,7 +48,7 @@ export default function Home() {
   return (
     <div>
         {loginStatus === LoginState.NOT_LOGGED_IN && <Login setToken={(value) => {setToken(value)}}></Login>}
-        {loginStatus === LoginState.LOGGED_IN && <p>Yay you logged in</p>}
+        {loginStatus === LoginState.LOGGED_IN && <App></App>}
     </div>
   )
 }
