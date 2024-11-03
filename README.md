@@ -1,6 +1,9 @@
 Python contains a flask backend, js contains a js frontend using nextJS, React, Prisma with SQLite.
 
 Basic login/signup features are implemented.
+- Login
+- Signup
+- Store auth token in localStorage, clear when pressing logout
 
 # Run the code
 
