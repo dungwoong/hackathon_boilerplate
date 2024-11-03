@@ -24,7 +24,8 @@ export default async function handler(req, res) {
             }
         });
         return res.status(201).json({message: "Success"});
-    } catch {
+    } catch (error) {
+        console.error(error);
         return res.status(400).json({error: "Could not create user"});
     }
 }

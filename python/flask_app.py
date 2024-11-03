@@ -12,5 +12,8 @@ def hello_world():
 
 if __name__ == '__main__':
     ip = os.getenv('IP_ADDRESS', None)
+    print(f'IP is {ip}')
 
-    app.run(host=ip, port=5000)
+    # need this if accessing app from outside localhost
+    # app.run(host=ip, port=5000)
+    app.run()

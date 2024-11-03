@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LOGIN_URL, NEXT_SERVER_URL } from "@/util/constants";
+import { tryLogin } from "./loginUtils";
 
 // Take functions for setting login state, setting token
 export default function Login({ setToken }) {
@@ -11,14 +11,8 @@ export default function Login({ setToken }) {
   const handleLogin = async () => {
     setIsLoggingIn(true);
     setShowError(false);
-    const response = await fetch(LOGIN_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
-
+    
+    const response = await tryLogin(username, password);
     if (!response.ok) {
       setShowError(true);
       setIsLoggingIn(false);
